@@ -19,18 +19,8 @@ public class CircleExample extends Application {
 	    Pane pane = new Pane();
 	    Circle circle1 = new Circle();
 	    Circle circle2 = new Circle();
-	    
-	    Text text = new Text();      
-	      
-	      //Setting the text to be added. 
-	      text.setText("Hello how are you"); 
-	       
-	      //setting the position of the text 
-	      text.setX(50); 
-	      text.setY(50); 
-	         
-	      //Creating a Group object  
-	      Group root = new Group(text); 
+
+
 	      
 	    Scene scene = new Scene(pane, 1200, 800);
 	  
@@ -54,7 +44,7 @@ public class CircleExample extends Application {
 	    
 	    
 	 
-	    pane.getChildren().addAll(circle1, circle2,root);
+	    pane.getChildren().addAll(circle1, circle2);
 
 	  
 	    primaryStage.setTitle("ShowCircle");
