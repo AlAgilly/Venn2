@@ -70,12 +70,42 @@ public class CircleExample extends Application {
 	    
 	    
 	    
-	    pane.getChildren().addAll(circle1,circle2);
+	   
 	    
-	    TextField userTextField = new TextField();
-        userTextField.setPrefWidth(800);
-        primaryStage.setScene(new Scene(userTextField));
-        primaryStage.show();
+	    GridPane grid = new GridPane();
+	    
+	    grid.setPadding(new Insets(10, 10, 10, 10));
+	    grid.setVgap(5);
+	    grid.setHgap(5);
+	    
+	    final TextField name = new TextField();
+	    name.setPromptText("Enter your first name.");
+	    name.setPrefColumnCount(20);
+	    name.getText();
+	    GridPane.setConstraints(name, 40, 40);
+	    grid.getChildren().add(name);
+	    
+	    final TextField name1 = new TextField();
+	    name1.setPromptText("Enter your last name.");
+	    name1.setPrefColumnCount(20);
+	    name1.getText();
+	    GridPane.setConstraints(name1, 70, 40);
+	    grid.getChildren().add(name1);
+	
+	    
+	    final TextField name2 = new TextField();
+	    name2.setPromptText("Enter your middle name.");
+	    name2.setPrefColumnCount(15);
+	    name2.getText();
+	    GridPane.setConstraints(name2, 52, 40);
+	    grid.getChildren().add(name2);
+	    
+	    
+	    
+	    
+	    pane.getChildren().addAll(circle1,circle2,grid);
+	    
+
 
 	  
 	    primaryStage.setTitle("ShowCircle");
