@@ -24,6 +24,7 @@ import javafx.stage.Stage;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -36,16 +37,22 @@ import javafx.stage.Stage;
 public class CircleExample extends Application { 
 	
 	
-	public void start(Stage primaryStage) {
+	public void start(Stage primaryStage) throws Exception {
+		
+		
+		
+		
+		Stage window = primaryStage;
+		
 		
 		Pane pane = new Pane();		
 	    Scene scene = new Scene(pane, 1200, 800);
 		
-		
-		
+	    Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+	    
 		
 		Pane pane1 = new Pane();	
-		Scene scene1 = new Scene(pane1, 400, 400);
+		Scene scene1 = new Scene(pane1, 1200, 800);
 		GridPane grid1 = new GridPane();
 	    grid1.setPadding(new Insets(10, 10, 10, 10));
 	    grid1.setVgap(5);
@@ -53,65 +60,48 @@ public class CircleExample extends Application {
 	    
 	    
 	    
-	    Label label1 = new Label("Enter number of circles");
+	    Label label1 = new Label("Number of circles");
 	    GridPane.setConstraints(label1, 0, 3);
 	    GridPane.setColumnSpan(label1, 2);
 	    grid1.getChildren().add(label1);
 
 	    
-	    final TextField name3= new TextField();
-	    name3.setPromptText("Enter your first name.");
-	    name3.setPrefColumnCount(5);  
-	    GridPane.setConstraints(name3, 3, 3);
-	    name3.getText();
-	    grid1.getChildren().add(name3);
-	    
-	    Button submit4 = new Button("Submit");
+	  
+	    Button submit4 = new Button("2");
 	    GridPane.setConstraints(submit4, 4, 3);
 	    grid1.getChildren().add(submit4);
+	   
 	    
+	    window.setX((screenBounds.getWidth() - 1200) / 2); 
+	    window.setY((screenBounds.getHeight() - 800) / 2); 
+	    
+	    submit4.setOnAction(e -> window.setScene(scene));
+
+	 
+	     
 	    
 	    
 	    pane1.getChildren().addAll(grid1);
-	    
-	    
-	 
-	    
-	    submit4.setOnAction(new EventHandler<ActionEvent>() {
-
- 	    	
- 	    	
- 	    	@Override
- 	    	    public void handle(ActionEvent e) {
- 	    	        if ((name3.getText() != null && !name3.getText().isEmpty())) {
- 	    	        
- 	    	        if (name3.getText() == "2") {
- 	    	        	
- 	    	        	primaryStage.setScene(scene);
+	     	primaryStage.setScene(scene1);
  	    	     	    primaryStage.show();
  	    	        	
- 	    	        }
- 	    	        }
- 	    	}
+ 	    	        
+ 	    	        
+ 	    	
  	    	        	
  	    	        	
 	 	    	       
- 	    	        } );
- 	    		    	 
-	    
-	    	
-	   
-	    	
-	    	
+ 	    	      
 	    	
 
 	   
 
 
-		  
+		/* 
 	    primaryStage.setTitle("ShowCircle");
 	    primaryStage.setScene(scene1);
 	    primaryStage.show();
+	  */
 	
 		
 		
@@ -233,7 +223,7 @@ public class CircleExample extends Application {
 
 	  
 	    primaryStage.setTitle("ShowCircle");
-	    primaryStage.setScene(scene);;
+	   // primaryStage.setScene(scene);;
 	
 	
 	
