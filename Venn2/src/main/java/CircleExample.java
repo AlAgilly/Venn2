@@ -46,13 +46,13 @@ public class CircleExample extends Application {
 		
 		
 		Pane pane = new Pane();		
-	    Scene scene = new Scene(pane, 1200, 800);
+	    Scene scene = new Scene(pane, 1620, 780);
 		
 	    Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
 	    
 		
 		Pane pane1 = new Pane();	
-		Scene scene1 = new Scene(pane1, 1200, 800);
+		Scene scene1 = new Scene(pane1, 1620, 780);
 		GridPane grid1 = new GridPane();
 	    grid1.setPadding(new Insets(10, 10, 10, 10));
 	    grid1.setVgap(5);
@@ -72,8 +72,8 @@ public class CircleExample extends Application {
 	    grid1.getChildren().add(submit4);
 	   
 	    
-	    window.setX((screenBounds.getWidth() - 1200) / 2); 
-	    window.setY((screenBounds.getHeight() - 800) / 2); 
+	    window.setX((screenBounds.getWidth() - 1620) / 2); 
+	    window.setY((screenBounds.getHeight() - 780) / 2); 
 	    
 	    submit4.setOnAction(e -> window.setScene(scene));
 
