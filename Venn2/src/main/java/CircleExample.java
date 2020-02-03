@@ -24,6 +24,7 @@ import javafx.stage.Stage;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -51,12 +52,15 @@ public class CircleExample extends Application {
 	    Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
 	    
 		
-		Pane pane1 = new Pane();	
+		Pane pane1= new Pane();	
 		Scene scene1 = new Scene(pane1, 1620, 780);
 		GridPane grid1 = new GridPane();
 	    grid1.setPadding(new Insets(10, 10, 10, 10));
 	    grid1.setVgap(5);
 	    grid1.setHgap(5);
+	    
+	    
+	    grid1.setAlignment(Pos.CENTER);
 	    
 	    
 	    
@@ -108,18 +112,15 @@ public class CircleExample extends Application {
 		
 				
 		
-		
-	    
+		   
 	    
 	    Circle circle1 = new Circle();
 	    Circle circle2 = new Circle();  
 
 	   
 	  
-	    circle1.setCenterX(pane.getWidth()/3);
+	    circle1.setCenterX(scene.getWidth()/3);
 	    circle1.setCenterY(800/2);
-	    
-	    
 	    circle1.setRadius(350);
 	    circle1.setStroke(Color.RED);
 	    circle1.setFill(null);
@@ -127,10 +128,7 @@ public class CircleExample extends Application {
 
 	   
 	    circle2.setCenterX(800);
-	    circle2.setCenterY(800/2);
-	    
-	    
-	    
+	    circle2.setCenterY(800/2);    
 	    circle2.setRadius(350);
 	    circle2.setStroke(Color.BLUE);
 	    circle2.setFill(null);
@@ -156,11 +154,11 @@ public class CircleExample extends Application {
 	    
 	    
 	    
-	   	    final TextField name2 = new TextField();
+	   	final TextField name2 = new TextField();
 	    name2.setPromptText("Enter your middle name.");
 	    name2.setPrefColumnCount(15);
 	    name2.getText();
-	    GridPane.setConstraints(name2, 40, 35); 
+	    GridPane.setConstraints(name2, 32, 35); 
 	    grid.getChildren().add(name2);
 	    
 	    
@@ -171,7 +169,30 @@ public class CircleExample extends Application {
 	    name1.getText();
 	    GridPane.setConstraints(name1, 50, 35);
 	    grid.getChildren().add(name1);
-	
+	    
+	    
+	    final TextField Title = new TextField();
+	    Title.setPromptText("Title1");
+	    Title.setPrefColumnCount(20);
+	    Title.getText();
+	    GridPane.setConstraints(Title, 31, 0);
+	    grid.getChildren().add(Title);
+	    Title.setAlignment(Pos.CENTER);
+	    
+	    
+	    
+	    final TextField Title1 = new TextField();
+	    Title1.setPromptText("Title");
+	    Title1.setPrefColumnCount(20);
+	    Title1.getText();
+	    GridPane.setConstraints(Title1, 36, 0);
+	    grid.getChildren().add(Title1);
+	    Title1.setAlignment(Pos.CENTER); 
+	    
+	    
+	    
+	    // name1.setAlignment(Pos.CENTER); 
+	 
 
 	    
 	    Button submit = new Button("Submit");
@@ -203,7 +224,7 @@ public class CircleExample extends Application {
 	    
 	    
 	    Button submit1 = new Button("Submit1");
-	    GridPane.setConstraints(submit1, 41, 35);
+	    GridPane.setConstraints(submit1, 32, 35);
 	    grid.getChildren().add(submit1);  
 	    
 	    
