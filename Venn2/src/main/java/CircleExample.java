@@ -80,10 +80,6 @@ public class CircleExample extends Application {
 	    window.setY((screenBounds.getHeight() - 780) / 2); 
 	    
 	    submit4.setOnAction(e -> window.setScene(scene));
-
-	 
-	     
-	    
 	    
 	    pane1.getChildren().addAll(grid1);
 	     	primaryStage.setScene(scene1);
