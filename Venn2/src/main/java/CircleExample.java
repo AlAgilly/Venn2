@@ -67,7 +67,9 @@ public class CircleExample extends Application {
 	    grid1.setVgap(5);
 	    grid1.setHgap(5);
 	    
-	   
+	    
+	    grid1.setAlignment(Pos.CENTER);
+	    
 	    
 	    
 	    Label label1 = new Label("Number of circles");
@@ -130,12 +132,15 @@ public class CircleExample extends Application {
 	   
 	    
 	    
+	    
+	    
+	    
 	  
 	    
 	    final TextField name = new TextField();
 	    name.setPromptText("Enter your first name.");
 	    name.setPrefColumnCount(20);
-	   
+	    name.getText();
 	   
 	    //GridPane.setConstraints(name, 30, 35);
 	    //grid.getChildren().add(name);
@@ -145,7 +150,7 @@ public class CircleExample extends Application {
 	   	final TextField name1 = new TextField();
 	    name1.setPromptText("Enter your middle name.");
 	    name1.setPrefColumnCount(15);
-	   
+	    name.getText();
 	   // GridPane.setConstraints(name2, 32, 35); 
 	    //grid.getChildren().add(name2);
 	    
@@ -154,7 +159,7 @@ public class CircleExample extends Application {
 	    final TextField name2 = new TextField();
 	    name2.setPromptText("Enter your last name.");
 	    name2.setPrefColumnCount(20);
-	
+	    name2.getText();
 	    //GridPane.setConstraints(name1, 50, 35);
 	    
 	    
@@ -162,7 +167,13 @@ public class CircleExample extends Application {
 	    
 	    
   GridPane grid3 = new GridPane();
-	
+	    
+	    grid3.setPadding(new Insets(10, 10, 10, 10));
+	    grid3.setVgap(5);
+	    grid3.setHgap(5);
+	    
+	    
+	    
 	    grid3.add(name, 60,20);
 	    grid3.add(name1,75,20);
 	    grid3.add(name2, 90, 20);
@@ -185,7 +196,7 @@ public class CircleExample extends Application {
 	    Title.getText();
 	    
 	
-	  //GridPane.setConstraints(Title, 31, 0);
+	    //GridPane.setConstraints(Title, 31, 0);
 	  //  grid.getChildren().add(Title);
 	    Title.setAlignment(Pos.CENTER);
 	    
@@ -219,14 +230,14 @@ public class CircleExample extends Application {
 	    Button submit = new Button("Submit");
 	   // GridPane.setConstraints(submit, 30, 35);
 	    String input = name.getText();
-	    grid1.getChildren().add(submit);
+	  //  grid.getChildren().add(submit);
 
 	
   	    
 	    final Label label = new Label(input);
 	    GridPane.setConstraints(label, 0, 3);
 	    GridPane.setColumnSpan(label, 2);
-	   grid1.getChildren().add(label);
+	   // grid.getChildren().add(label);
 
 
 	    
@@ -270,11 +281,7 @@ GridPane grid = new GridPane();
 	    
 	    primaryStage.setMaximized(true);
 	    
-	    pane.getChildren().addAll(grid3,grid,grid2,circle1,circle2);
-	  
-		
-   	  primaryStage.setMaximized(true);
-   	     	    primaryStage.show();
+	    pane.getChildren().addAll(circle1,circle2,grid3,grid,grid2);
 	    
 
 	 
