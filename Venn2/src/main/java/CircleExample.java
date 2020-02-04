@@ -50,7 +50,7 @@ public class CircleExample extends Application {
 					
 		primaryStage.setMaximized(true);
 
-		StackPane pane = new StackPane();		
+		Pane pane = new Pane();		
 	    Scene scene = new Scene(pane, 1620, 780);
 		
 	    Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
