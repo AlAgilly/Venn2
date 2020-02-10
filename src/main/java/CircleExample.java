@@ -18,6 +18,7 @@ import javafx.scene.paint.Color;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
@@ -49,9 +50,9 @@ public class CircleExample extends Application {
 		
 					
 		primaryStage.setMaximized(true);
-
 		Pane pane = new Pane();		
 	    Scene scene = new Scene(pane, 1620, 780);
+	    
 		
 	    Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
 	    
@@ -130,76 +131,88 @@ public class CircleExample extends Application {
 	   
 	    
 	    
-	  
+	    GridPane grid = new GridPane();
 	    
+	    grid.setPadding(new Insets(10, 10, 10, 10));
+	    grid.setVgap(5);
+	    grid.setHgap(5);
+	    
+	    
+
 	    final TextField name = new TextField();
-	    name.setPromptText("Enter your first name.");
+	    name.setPromptText("Enter your object");
 	    name.setPrefColumnCount(20);
-	   
-	   
-	    //GridPane.setConstraints(name, 30, 35);
-	    //grid.getChildren().add(name);
+	    
+	    GridPane.setConstraints(name, 50, 20);
 	    
 	    
 	    
 	   	final TextField name1 = new TextField();
-	    name1.setPromptText("Enter your middle name.");
+	    name1.setPromptText("Enter your object2");
 	    name1.setPrefColumnCount(15);
-	   
-	   // GridPane.setConstraints(name2, 32, 35); 
-	    //grid.getChildren().add(name2);
-	    
+	    GridPane.setConstraints(name1, 70, 20);
 	    
 	    
 	    final TextField name2 = new TextField();
-	    name2.setPromptText("Enter your last name.");
+	    name2.setPromptText("Enter your object 3");
 	    name2.setPrefColumnCount(20);
+	    GridPane.setConstraints(name2, 90, 20);
 	
-	    //GridPane.setConstraints(name1, 50, 35);
+	    grid.getChildren().addAll(name,name1,name2);
+	    
+	    
+	   
 	    
 	    
 	    
 	    
-	    
-  GridPane grid3 = new GridPane();
-	
-	    grid3.add(name, 60,20);
-	    grid3.add(name1,75,20);
-	    grid3.add(name2, 90, 20);
-	  
-	 
-	    
-	    
-
-	    
-	    
-	    
+		    
 	    //Titles
 	    
+	    GridPane grid3 = new GridPane();
 	    
+	    grid3.setPadding(new Insets(10, 10, 10, 10));
+	    grid3.setVgap(5);
+	    grid3.setHgap(5);
 	    
 	    	    
 	    final TextField Title = new TextField();
-	    Title.setPromptText("Title1");
+	    Title.setPromptText("Title");
 	    Title.setPrefColumnCount(20);
 	    Title.getText();
-	    
-	
-	  //GridPane.setConstraints(Title, 31, 0);
+	   GridPane.setConstraints(Title, 72, 0);
 	  //  grid.getChildren().add(Title);
 	    Title.setAlignment(Pos.CENTER);
 	    
 	    
 	    
 	    final TextField Title1 = new TextField();
-	    Title1.setPromptText("Title");
+	    Title1.setPromptText("Title1");
 	    Title1.setPrefColumnCount(20);
 	    Title1.getText();
-	   // GridPane.setConstraints(Title1, 36, 0);
+	  GridPane.setConstraints(Title1, 90, 0);
 	  //  grid.getChildren().add(Title1);
 	    Title1.setAlignment(Pos.CENTER); 
 	    
 	    
+	    
+	 
+	 //   grid2.setPadding(new Insets(5, 5, 5, 5));
+	  //  grid2.setVgap(5);
+	  //  grid2.setHgap(5);
+	    
+	    grid3.getChildren().addAll(Title,Title1);
+	    
+	 //   grid2.add(Title, 75,0);
+	  //  grid2.add(Title1,79,0);
+	    
+	    
+	  //  grid2.add(name, 70,40);
+	  //  grid2.add(name1, 75, 40);
+	   // grid2.add(name2, 80, 40);
+
+	  
+	   
 	    
 	    GridPane grid2 = new GridPane();
 	    grid2.setPadding(new Insets(10, 10, 10, 10));
@@ -207,22 +220,14 @@ public class CircleExample extends Application {
 	    grid2.setHgap(5);
 	    
 	    
-	    
-	    grid2.add(Title, 100,0);
-	    grid2.add(Title1,70,0);
-	  
-	   
-	    
-	    
-	    
-	    
 	    Button submit = new Button("Submit");
-	   // GridPane.setConstraints(submit, 30, 35);
+	    GridPane.setConstraints(submit, 100, 20);
 	    String input = name.getText();
-	    grid1.getChildren().add(submit);
+	    grid2.getChildren().add(submit);
 
-	
-  	    
+	    
+	    /*
+	    
 	    final Label label = new Label(input);
 	    GridPane.setConstraints(label, 0, 3);
 	    GridPane.setColumnSpan(label, 2);
@@ -237,32 +242,34 @@ public class CircleExample extends Application {
 	    label.setText("The name you entered is " + name.getText());
 	            }
 	    );
-	    
+	    */
 
-	    
+	 
 	    Button submit1 = new Button("Submit1");
-	 //   GridPane.setConstraints(submit1, 32, 35);
-	 //   grid.getChildren().add(submit1);  
-	    
+	  GridPane.setConstraints(submit1, 145, 20);
+	  grid2.getChildren().add(submit1);
+
 	    
 	    Button submit2 = new Button("Submit2");
-	 //   GridPane.setConstraints(submit2, 51, 35);
-	  //  grid.getChildren().add(submit2);
+	    GridPane.setConstraints(submit2, 200, 20);
+	    grid2.getChildren().add(submit2);
 	    
-GridPane grid = new GridPane();
+	    
+	    StackPane pane_s = new StackPane();
+	 
+	    pane_s.getChildren().addAll(grid,grid2,grid3);
 
 
-	    
-	    grid.setPadding(new Insets(10, 10, 10, 10));
-	    grid.setVgap(5);
-	    grid.setHgap(5);
-	    
+
+	   /*
 	    grid.add(submit, 110,20);
 	    grid.add(submit1,150,20);
 	    grid.add(submit2, 200, 20);
-	    
-	
 	  
+*/
+	 AnchorPane circles= new AnchorPane();
+	 
+	 circles.getChildren().addAll(circle1,circle2);
 	 
 	    
 	    
@@ -270,10 +277,8 @@ GridPane grid = new GridPane();
 	    
 	    primaryStage.setMaximized(true);
 	    
-	    pane.getChildren().addAll(grid3,grid,grid2,circle1,circle2);
-	  
-		
-   	  primaryStage.setMaximized(true);
+   pane.getChildren().addAll(circles,pane_s);
+
    	     	    primaryStage.show();
 	    
 
